@@ -33,7 +33,7 @@ int main()
 
     // Char
     char character;
-    character = 0;
+    character = 'A';
     printf("The character %c has the ASCII code %d\n", character, character);
 
     // Short
@@ -44,7 +44,7 @@ int main()
 
     // Long long
     long long NN = 0x12345678ABCD0001LL; //Literal in HEX
-    printf("A very large number %lld\n", NN);
+    printf("A very large number %11d\n", NN);
     printf("A very large number in hex %llX\n", NN);
 
     // unsigned
@@ -55,11 +55,11 @@ int main()
 
     // float 
     float pi_float = 3.1415926536;
-    printf("The value of pi is approximately %f\n", pi_float);
+    printf("The value of pi is approximately %.10f\n", pi_float);
 
     // double
-    double pi_double = 3.1415926536l;
-    printf("The value of pi is approximately %lf\n", pi_double);
+    double pi_double = 3.14159265358979323846l;
+    printf("The value of pi is approximately %.10lf\n", pi_double);
 
     // Data type sizes (in bytes)
     printf("Size of a char is %d bytes\n", sizeof(char));
