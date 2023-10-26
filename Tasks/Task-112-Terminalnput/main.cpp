@@ -23,23 +23,30 @@ int main()
     printf("You entered character %c which has the ASCII code %d\n", c2, c2);
 
     //scanf
-    printf("\n\nTo set the delay (in ms), type in an integer number and press return\n");
+    printf("\n\nTo set the on delay (in ms), type in an integer number and press return\n");
     int delay_ms;
     int parsed = scanf("%d", &delay_ms);
     
+    printf("\n\nTo set the off delay (in ms), type in an integer number and press return\n");
+    int delay_ms2;
+    int parsed2 = scanf("%d", &delay_ms2);
+
     printf("You entered %d correct integer values. The value was %dms\n", parsed, delay_ms);
+    printf("You entered %d correct integer values. The value was %dms\n", parsed2, delay_ms2);
 
     // Stop
-    while (parsed > 0) {
+    while (parsed > 0 && parsed2 > 0) {
         wait_us(delay_ms * 1000);
         led1 = 1;
         led2 = 1;
         led3 = 1;
-        wait_us(delay_ms * 1000);
+        wait_us(delay_ms2 * 1000);
         led1 = 0;
         led2 = 0;
         led3 = 0;        
     } 
+    
+
 
     printf("Invalid - please restart and try again\n");
     while(1);    
