@@ -13,11 +13,15 @@ int main()
         //Wait for a press
         while (ButtonA==0) { };
 
+        wait_us(100);
+
         //Toggle LED
         redLED = !redLED;
 
         //Wait for release
         while (ButtonA==1) { };
+
+        wait_us(100);
     }
 }
 
