@@ -34,28 +34,91 @@ int main()
             //Nothing pressed
             greenLED = 0;
             yellowLED = 0;
-            redLED = !redLED;
+            redLED = 0;
             break;
 
             case 1:
             //Button A only
-            redLED = 0;
+            greenLED = 0;
             yellowLED = 0;            
-            greenLED = !greenLED;
+            redLED = !redLED;
             break;
 
-            case 3: 
-            //Button A and B
+            case 2: 
+            //Button B
             redLED = 0;
             yellowLED = !yellowLED;            
             greenLED = 0;
             break;
 
+            case 4: 
+            //Button C
+            redLED = 0;
+            greenLED = !greenLED;            
+            yellowLED = 0;
+            break;
+
+            case 8: 
+            //Button D
+            redLED = !redLED;
+            greenLED = !greenLED;            
+            yellowLED = !yellowLED;
+            break;
+
+            case 9: 
+            //Button D
+            redLED = !redLED;
+            greenLED = !greenLED;            
+            yellowLED = !yellowLED;
+            break;
+
+            case 10: 
+            //Button D
+            redLED = !redLED;
+            greenLED = !greenLED;            
+            yellowLED = !yellowLED;
+            break;
+
+            case 11: 
+            //Button D
+            redLED = !redLED;
+            greenLED = !greenLED;            
+            yellowLED = !yellowLED;
+            break;
+
+            case 12: 
+            //Button D
+            redLED = !redLED;
+            greenLED = !greenLED;            
+            yellowLED = !yellowLED;
+            break;
+
+            case 13: 
+            //Button D
+            redLED = !redLED;
+            greenLED = !greenLED;            
+            yellowLED = !yellowLED;
+            break;
+
+            case 14: 
+            //Button D
+            redLED = !redLED;
+            greenLED = !greenLED;            
+            yellowLED = !yellowLED;
+            break;
+
+            case 15: 
+            //Button D
+            redLED = !redLED;
+            greenLED = !greenLED;            
+            yellowLED = !yellowLED;
+            break;
+
             default:
             //All others
-            greenLED = 0;
-            yellowLED = 0;
-            redLED = 0;
+            greenLED = 1;
+            yellowLED = 1;
+            redLED = 1;
             break;
 
         }

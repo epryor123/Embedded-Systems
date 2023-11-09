@@ -37,34 +37,51 @@ int main()
     // IT NEEDS FIXING
     // ****************************************
 
+    int btnA_prev = buttonA;
+    int btnB_prev = buttonB;
+    int btnA_now;
+    int btnB_now;
+
     while (true) {
 
-        //Update display
-        disp = count;
-        
+
+        btnA_now = buttonA;
+        btnB_now = buttonB;
+
         //Wait for button A
-        while (buttonA == 0) {
-        } 
+        if (btnA_now != btnA_prev){
+            if (btnA_now == 1) {
+                if (count < 99 ) {
+                count += 1;
+                }
+            }
 
-        if (count > 0 ) {
-            count -= 1;
+            btnA_prev = btnA_now;
+            
+            disp = count;
         }
 
-        //Wait for button B
-        while (buttonB == 0) {
+
+        if (btnB_now != btnB_prev){
+            if (btnB_now == 1) {
+                if (count > 0){
+                    count -= 1;
+                }
+            }
+
+            btnB_prev = btnB_now;
+
+            disp = count;
         }
-
-        if (count < 99 ) {
-            count += 1;
-        } 
-
+        
         //Reset condition
-        if ((buttonA == 1) && (buttonB == 1)) {
+        if ((btnA_now == 1) && (btnB_now == 1)) {
             count = 0;
+            disp = count;
         }
 
         // Slow it down a bit (and debounce the switches)
-        wait_us(250000);  
+        wait_us(50000);  
     }
 }
 

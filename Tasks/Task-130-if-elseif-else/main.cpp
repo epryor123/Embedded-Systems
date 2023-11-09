@@ -27,12 +27,31 @@ int main()
         
         //Read button without blocking
         int btnA = ButtonA;     //Local to the while-loop  
+        int btnB = ButtonB;
 
         //Test Button A
         if (btnA == 1) {
             redLED = !redLED;    //Toggle RED led
-            count = count + 1;            //Increment count
+            count = count + ( (count<99) ? 1 : 0 );            //Increment count
             disp = count;       //Update display
+        }
+
+        //Test Button B
+        else if (btnB == 1) {
+            redLED = !redLED;    //Toggle RED led
+            count = count - 1;            //Increment count
+            if (count < 0) {
+                count = 0;
+            }
+            disp = count;       //Update display
+        }
+        else if ((btnA == 1) && (btnB == 1)) {
+            redLED = !redLED;    //Toggle RED led
+            count = count + ( (count<99) ? 1 : 0 );            //Increment count
+            disp = count;
+        }
+        else {
+            greenLED = !greenLED;
         }
 
         // Slow it down a bit (and debounce the switches)
