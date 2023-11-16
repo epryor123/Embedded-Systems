@@ -19,20 +19,28 @@ int main()
     unsigned short samples[100];
 
     for (unsigned int m=0; m<100; m++) {
-        printf("%X ", samples[m]);
+        printf("%d ", samples[m]);
     }
+
+    unsigned int sum;
+    unsigned int mean;
 
     // Automatic headlamp 
     while (true) {
 
+        sum = 0;
+        mean = 0;
+
         for (unsigned int m=0; m<100; m++) {
             unsigned short ldrVal   = ldr.read_u16();
             samples[m] = ldrVal;
+            sum += samples[m];
             wait_us(10000);          // 10ms
         }
 
         // TASK a. Calculate the average value in samples
-
+        mean = sum/100;
+        printf("\n%d\n", mean);
         // TASK b. Display to 1dp
 
         // TASK c. Switch green LED on when dark;
