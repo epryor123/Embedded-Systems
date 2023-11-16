@@ -22,8 +22,10 @@ int main()
         printf("%d ", samples[m]);
     }
 
-    unsigned int sum;
-    unsigned int mean;
+    float sum;
+    float mean;
+
+    greenLED = 0;
 
     // Automatic headlamp 
     while (true) {
@@ -40,10 +42,18 @@ int main()
 
         // TASK a. Calculate the average value in samples
         mean = sum/100;
-        printf("\n%d\n", mean);
+        printf("\n%.1f\n", mean);
         // TASK b. Display to 1dp
 
         // TASK c. Switch green LED on when dark;
+
+        if (mean > 5450) {
+            greenLED = 1;
+        }
+
+        if (mean < 5500) {
+            greenLED = 0;
+        }
 
     }  
 }
